@@ -1,0 +1,10 @@
+[build]
+buildCommand = "npm install && npm run build"
+
+[deploy]
+startCommand = "npx prisma db push && node src/index.js"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+
+[[services]]
+name = "web"
